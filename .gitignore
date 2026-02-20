@@ -1,0 +1,22 @@
+# Separate project folders (tracked in different repositories)
+seedai/
+seedweb/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build/runtime
+node_modules/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
