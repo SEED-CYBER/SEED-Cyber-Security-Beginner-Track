@@ -2,7 +2,7 @@
  ## WE USED TOOLS LIKE 
  1. `netdiscover` to identify host in a network
  2.  `Made use of NMAP` to perform active and passive scanning
-
+3. this is good
 the output is as follows 
 
 `┌──(mazwewoh㉿brindi)-[~]
