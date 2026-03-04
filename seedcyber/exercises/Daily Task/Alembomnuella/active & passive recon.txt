@@ -1,0 +1,23 @@
+oIn today's activities i studied tryharkme and under that we had some modulles with tasks.These modulles are as follows
+  1. PASSIVE RECONNAISANCE
+    TASK1: introduction
+The introduction was talking baout wht we will be learning in oether tasks like the command-line which are {whois to query whois server records, nslookup to query
+dns servers, dig to query dns servers}and some online services like(dnsdumpster and shodan)
+     Task 2:Passive Versus Active Recon
+Recon is a technique of gathering information about a target.Recone is divided into two ( passive and Active recon)
+in the passive recon we rely on publicly available knowledge that you can access from publicly resources without directly
+engagingwithe the target.
+Active recon cannot be achieved so discreetly, it requires direct engagment with the target.
+and i successfully answered some questions under this task.
+     Task 3: WHOIS
+in this task i learned that Whois is a request and response protocol and it is used to retrieve domain registration
+details.it is also usefull in that it identifies infrastructure ownership.
+  2. ACTIVE RECONNAISANCE
+     TASK1.Introduction
+in this introduction the focus was on active recon and tools related to it.Tools like Ping, traceroute,telnet
+are used to gather information about the network, system,and server. Active recon involves activities like
+ phone call,visiting the target company,nd social engineering.
+     TASK2:Web Brouser
+in this task i learned that at the transport level the browser connects to TCP port 80 by default when the website
+ is accessed over HTTP and also connect to TCP port 443 by default when the website is accessed over HTTPS
+i also laerned that while browsing a webpage i can press crtl+shift+I
