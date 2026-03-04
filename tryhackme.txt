@@ -1,0 +1,26 @@
+In my tryhackme startup, i had a clue in the followin
+g
+1. WHOIS command this command gives information about the target domain.
+this information can be the registrar's name, the name of the organization, date of creation and more information concerning the target. This is passive reconnaisence
+Di came to understant that pssive recon has no direct contact with the system.
+
+ example can be searching about a company on facebook
+2. DEVELOPER TOOL. this tool is accessed using F12 and here you get more info about your current page
+
+
+3. PING: with the ping, i learned that you can this request is use to check the the state of a mechine if it is on or off.
+And also, a mechine may not reply to a ping message due to the firewall configurations. also the -c is used to specify counts, -I use to show the interface, -C -w for >ping -c 10 192.168.1.1.1
+
+4. Nmap. this tool helps scan for open ports in the the targeted site.
+the stages here include enumerating the target, discovering live hosts, reverse-DNS lookups, port scanning, detecting versions, detecting operating systems, traceroute>a. ARP scan : this scan uses the ar request to descover life hosts
+b. ICMP scan: this scan uses the icmp requests to identify live hosts
+c. TCP/UDP ping scan: This scans sends packes to TCP ports and UDP ports to determine live hosts
+
+4. I came to know about subnets. for /24, it indeicates that  the subnet mask can be expressed as 255.255.255.0
+and for /16, it indicates theat the subnet can be written as 255.255.0.0
+* Essentially, when you are in a LAN, you can be able to discover the devices within your network /24 using the arp
+also given devices in a LAN, when the arp scan is ran, devices out of that LAN  willnot recieve the request but all the devices in the LAN will see the ARP request
+
+
+ASIDE THE TRYHACKME,
+i came to know the process of creating a ssh key in my cmd and pasting it on privnot.com to get a link that was used to get me into the server
