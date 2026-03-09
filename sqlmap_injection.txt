@@ -1,0 +1,25 @@
+
+
+SQL INJECTIONOO USING SQLMAP REPORT
+
+This is a report of an SQL injection on metasploit DVWA at 192.168.63.141 using SQLMAP
+
+After my burp suit was ready to capture logs as I browse, 
+I went to DVWA and login and went to sql injection set the security to low, 
+then I entered an arbituary password then went to burpsuit. From there,
+ I saved the log as dvwa.txt. now in my terminal, I entered
+
+ 
+The SQLMap enumeration began with the command `sqlmap -r dvwa.txt --batch --dbs`, 
+which identified the MySQL databases present including dvwa, information_schema, and mysql. 
+Following this, the command `sqlmap -r dvwa.txt --batch -D dvwa --tables` listed the tables within the dvwa database, revealing guestbook and users.
+ The command `sqlmap -r dvwa.txt --batch -D dvwa -T users --dump` then extracted the contents of the users table, displaying usernames and their corresponding MD5 password hashes, 
+
+   notably the admin hash `5f4dcc3b5aa765d61d8327deb882cf99`.
+
+         POINTS TO BE NOTED
+1. SQLMap automates SQL injection detection and data extraction
+2. SQLite uses `--tables` while MySQL uses `--dbs` for enumeration
+3. Burp Suite captures authenticated requests needed for SQLMap
+4. MD5 hashes crack easily with John the Ripper and rockyou.txt
+5. Low security settings remove protections, exposing vulnerabilities 
