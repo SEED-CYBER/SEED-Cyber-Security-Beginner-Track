@@ -1,0 +1,29 @@
+Today i carried sites on the a site called tryhackme.com where i learned and carried out reconnaisance tasks on,
+    I learnt there are two ways to carry out reconnaisance which are active reconnaisance and passive reconnaisance,and that
+passive reconnaissance lets you gather information about your target without any kind of direct engagement or connection whereas
+Active reconnaissance requires you to make some kind of contact with your target.
+    I also  learned some basic activities which are carried out during both methods of reconnaisance for example looking up
+DNS records of a domain form a public DNS Server with passive recon and Connecting to target servers via HTTP,FTP e.t.c
+i also learned some necessary commands to carry out reconnaisance
+      1.Whois = used to get DNS details of a server
+      2.Nslookup = used to find ip addresses of Domain name servers
+      3.Ping = the ping command sends a packet to a remote system, and the remote system replies
+not only did i learned some commands i also learned how to use tools like DNS DUMPSTER = which is a tool used to find sub
+domain name servers and also help to present them in easy to read tables and graphs
+Another very important tool i learnt how to use was Network Mapper (Nmap) i learned it is an industry-standard tool for mapping
+networks,identifying live hosts and discovering running services.
+i learnt alot of Nmap functions from tryhackme.com which i stil have to study in the future some are;
+- Enumerate targets
+- Discover live hosts
+- Reverse DNS lookup
+- Scan ports
+- Detect versions
+- Detect OS
+- Traceroute
+- Scripts
+- write Output
+
+They last thinf i learned where some of the scanning methods used which i'll outline below
+        ARP scan: This scan uses ARP request to discover live hosts
+        ICMP scan: This scan uses ICMP requests to identify live hosts
+        TCP/UDP : Sends packets to TCP ports and UDP ports to determine live hosts
